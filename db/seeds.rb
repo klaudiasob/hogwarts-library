@@ -1,3 +1,18 @@
+User.create([
+                 {
+                     email: "user1@example.com",
+                     password: "password1",
+                     first_name: "John",
+                     last_name: "Doe"
+                 },
+                 {
+                     email: "user2@example.com",
+                     password: "password2",
+                     first_name: "Jane",
+                     last_name: "Doe"
+                 }
+             ])
+
 House.create([
                  {
                      name: "Gryffindor",
