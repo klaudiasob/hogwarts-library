@@ -7,5 +7,9 @@ module Types
     field :ministry_of_magic, Boolean, null: true
     field :order_of_phoenix, Boolean, null: true
     field :death_eater, Boolean, null: true
+
+    def self.authorized?(object, context)
+      super && context[:current_user].present?
+    end
   end
 end
