@@ -8,4 +8,9 @@ class HogwartsLibrarySchema < GraphQL::Schema
 
   # Add built-in connections for pagination
   use GraphQL::Pagination::Connections
+
+  def self.unauthorized_object(error)
+    # Add a top-level error to the response instead of returning nil:
+    raise GraphQL::ExecutionError, "An object of type #{error.type.graphql_name} was hidden due to permissions"
+  end
 end
